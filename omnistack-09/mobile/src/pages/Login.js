@@ -33,6 +33,8 @@ export default function Login({ navigation }) {
       email
     });
 
+    console.log(response);
+
     const { _id } = response.data;
 
     await AsyncStorage.setItem("user", _id);
