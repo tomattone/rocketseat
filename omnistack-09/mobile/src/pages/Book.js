@@ -5,7 +5,8 @@ import {
   TextInput,
   StyleSheet,
   TouchableOpacity,
-  Alert
+  Alert,
+  Text
 } from "react-native";
 
 import api from "../services/api";
