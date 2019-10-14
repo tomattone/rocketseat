@@ -7,7 +7,7 @@ import cors from 'cors';
 
 import Youch from 'youch';
 
-import * as Sentry from '@sentry/node';
+// import * as Sentry from '@sentry/node';
 import routes from './routes';
 
 import './database';
@@ -16,17 +16,16 @@ class App {
   constructor() {
     this.server = express();
 
-    Sentry.init({
-      dsn: 'https://998ac0068008494d9dc458bff2ad8240@sentry.io/1766397',
-    });
-
-    this.server.use(Sentry.Handlers.requestHandler());
+    // Sentry.init({
+    //   dsn: 'https://998ac0068008494d9dc458bff2ad8240@sentry.io/1766397',
+    // });
+    // this.server.use(Sentry.Handlers.requestHandler());
 
     this.middlewares();
     this.routes();
     this.exceptionHandler();
 
-    this.server.use(Sentry.Handlers.errorHandler());
+    // this.server.use(Sentry.Handlers.errorHandler());
   }
 
   middlewares() {
