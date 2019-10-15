@@ -11,14 +11,18 @@ class Queue {
   }
 
   init() {
-    jobs.forEach(({ key, handle }) => {
-      this.queues[key] = {
-        bee: new Bee(key, {
-          redis: redisConfig,
-        }),
-        handle,
-      };
-    });
+    try {
+      jobs.forEach(({ key, handle }) => {
+        this.queues[key] = {
+          bee: new Bee(key, {
+            redis: redisConfig,
+          }),
+          handle,
+        };
+      });
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   add(queue, job) {
