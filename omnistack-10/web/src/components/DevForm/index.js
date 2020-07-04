@@ -23,9 +23,9 @@ function DevForm({ onSubmit }) {
   }, []);
 
   async function handleSubmit(e) {
-    e.preventDefaul();
+    e.preventDefault();
 
-    await onsubmit({
+    await onSubmit({
       github_username,
       techs,
       latitude,
